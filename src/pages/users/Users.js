@@ -1,12 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import Header from '../../components/header/Header'
+import { GetAllUsers } from '../../store/action';
 import UserList from './UserList'
 import styles from './UserList.module.css';
 
 function Users() {
   let users = useSelector((state) => state.data.userList);
-  console.log(users);
+  
+  if(users.length == 0){
+    return null;
+  }
+  
   return (
     <>
         <Header/>
@@ -33,7 +38,7 @@ function Users() {
           </div>
         </div>
         {
-          users.users.map((user) => {
+          (users).users.map((user) => {
             return <UserList key={user.id} user={user}/>
           })
         }

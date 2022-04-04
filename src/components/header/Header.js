@@ -5,6 +5,9 @@ import styles from './Header.module.css';
 function Header() {
   const data = useSelector(state => state.data.user);
 
+  if(!data){
+    return null;
+  }
   return (
     <header>
         <div className='container'>
