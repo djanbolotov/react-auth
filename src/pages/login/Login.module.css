@@ -1,0 +1,45 @@
+.login{
+    background: url('../../assets/images/Login.png');
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__form{
+    padding: 1rem;
+    background-color: #fff;
+    border: 2px  rgba(64, 202, 240, 0.575) solid;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.login__form > *{
+    margin: 2rem;
+}
+
+.login input{
+    width: 20rem;
+    height: 3rem;
+    padding-left: 0.5rem;
+    border: 2px rgba(64, 202, 240, 0.575) solid;
+    border-radius: 0.5rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+input::placeholder{
+    font-size: 1.2rem;
+    color: black;
+}
+
+button{
+    padding: 0.7rem 2rem;
+    border-radius: 0.6rem;
+    font-size: 1.2rem;
+    border: 2px rgba(64, 202, 240, 0.6) solid;
+    background-color: #fff;
+}

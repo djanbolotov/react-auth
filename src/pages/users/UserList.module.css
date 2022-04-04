@@ -1,0 +1,24 @@
+.userList{
+    display: grid;
+    grid-template-columns: 5% 35% 25% 5% 20% 10%;
+    border: 2px rgba(64, 202, 240, 0.575) solid;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.userList *{
+    font-size: 1.5rem;
+    border-right: 2px rgba(64, 202, 240, 0.575) solid;
+    text-align: center;
+}
+
+.userHead{
+    display: grid;
+    grid-template-columns: 5% 30% 20% 5% 20% 20%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 1000;
+    text-align: center;
+}
