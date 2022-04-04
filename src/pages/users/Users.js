@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import Header from '../../components/header/Header'
-import { GetAllUsers } from '../../store/action';
 import UserList from './UserList'
 import styles from './UserList.module.css';
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import './App.css'
+import Loading from './components/loader/Loader';
 import Login from './pages/login/Login'
 import Registration from './pages/registration/Registration'
 import Users from './pages/users/Users';
@@ -12,6 +13,7 @@ function App() {
   const dispatch = useDispatch();
   const loginSuccess = useSelector(state => state.data.login.success);
   const getSuccess = useSelector(state => state.data.get.success);
+  const getLoading = useSelector(state => state.data.get.loading);
 
   useEffect(() => {
     dispatch(GetMe());
@@ -19,6 +21,7 @@ function App() {
   }, [loginSuccess]);
 
   return (
+    <>
       <BrowserRouter basename='react-auth'>
         <Routes>
           <Route exact path='/' element={ (loginSuccess || getSuccess)? <Users/> : <Navigate to='/login'/>}/>
@@ -26,6 +29,8 @@ function App() {
           <Route exact path='/registration' element={<Registration/>}/>
         </Routes>
       </BrowserRouter>
+      {getLoading && <Loading/>}
+    </>
   );
 }
 

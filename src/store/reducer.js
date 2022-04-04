@@ -1,4 +1,4 @@
-import { GET_FAILED, GET_LOADING, GET_SUCCESS, GET_USER_LIST_FAILED, GET_USER_LIST_LOADING, GET_USER_LIST_SUCCESS, LOGIN_EMAIL_CHANGED, LOGIN_FAILED, LOGIN_LOADING, LOGIN_PASSWORD_CHANGED, LOGIN_SUCCESS, REGISTRATION_AGE_CHANGED, REGISTRATION_EMAIL_CHANGED, REGISTRATION_FAILED, REGISTRATION_LOADING, REGISTRATION_NAME_CHANGED, REGISTRATION_PASSWORD_CHANGED, REGISTRATION_SUCCESS } from "./action"
+import { GET_FAILED, GET_LOADING, GET_SUCCESS, GET_USER_LIST_FAILED, GET_USER_LIST_LOADING, GET_USER_LIST_SUCCESS, LOGIN_FAILED, LOGIN_LOADING, LOGIN_SUCCESS, REGISTRATION_FAILED, REGISTRATION_LOADING, REGISTRATION_SUCCESS } from "./action"
 
 
 const initialState = {
@@ -25,16 +25,6 @@ const initialState = {
         success: false,
         failed: false,
         loading: false
-    },
-    loginField: {
-        email: '',
-        password: '',
-    },
-    registrationField: {
-        email: '',
-        password: '',
-        name: '',
-        age: '',
     }
 }
 
@@ -59,7 +49,6 @@ export const reducer = (state = initialState, action) => {
                     failed: false,
                     loading: false
                 },
-                registration: initialState.registration
             }
         }
         case LOGIN_FAILED: {
@@ -91,7 +80,6 @@ export const reducer = (state = initialState, action) => {
                     failed: false,
                     loading: false
                 },
-                login: initialState.login
             }
         }
         case REGISTRATION_FAILED: {
@@ -132,7 +120,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload,
-                registration: {
+                get: {
                     success: false,
                     failed: true,
                     loading: false
@@ -168,60 +156,6 @@ export const reducer = (state = initialState, action) => {
                     success: false,
                     failed: true,
                     loading: false
-                }
-            }
-        }
-        case LOGIN_EMAIL_CHANGED: {
-            return {
-                ...state,
-                loginField: {
-                    ...state.loginField,
-                    email: action.payload
-                }
-            }
-        }
-        case LOGIN_PASSWORD_CHANGED: {
-            return {
-                ...state,
-                loginField: {
-                    ...state.loginField,
-                    password: action.payload
-                }
-            }
-        }
-        case REGISTRATION_EMAIL_CHANGED: {
-            return {
-                ...state,
-                registrationField: {
-                    ...state.registrationField,
-                    email: action.payload
-                }
-            }
-        }
-        case REGISTRATION_PASSWORD_CHANGED: {
-            return {
-                ...state,
-                registrationField: {
-                    ...state.registrationField,
-                    password: action.payload
-                }
-            }
-        }
-        case REGISTRATION_NAME_CHANGED: {
-            return {
-                ...state,
-                registrationField: {
-                    ...state.registrationField,
-                    name: action.payload
-                }
-            }
-        }
-        case REGISTRATION_AGE_CHANGED: {
-            return {
-                ...state,
-                registrationField: {
-                    ...state.registrationField,
-                    age: action.payload
                 }
             }
         }

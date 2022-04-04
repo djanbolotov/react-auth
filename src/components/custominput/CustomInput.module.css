@@ -1,0 +1,12 @@
+.error input{
+    border: solid 2px red;
+}
+
+.error span{
+    color: red;
+    font-size: small;
+}
+
+.formControl{
+    text-align-last: left;
+}
