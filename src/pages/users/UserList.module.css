@@ -15,7 +15,7 @@
 
 .userHead{
     display: grid;
-    grid-template-columns: 5% 30% 20% 5% 20% 20%;
+    grid-template-columns: 5% 35% 25% 5% 20% 10%;
     margin-top: 1rem;
     padding: 0.5rem;
     font-size: 1.5rem;
