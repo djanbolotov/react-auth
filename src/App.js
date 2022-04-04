@@ -19,7 +19,7 @@ function App() {
   }, [loginSuccess]);
 
   return (
-      <BrowserRouter>
+      <BrowserRouter basename='react-auth'>
         <Routes>
           <Route exact path='/' element={ (loginSuccess || getSuccess)? <Users/> : <Navigate to='/login'/>}/>
           <Route exact path='/login' element={ (!loginSuccess && !getSuccess)? <Login/> : <Navigate to='/'/>}/>
